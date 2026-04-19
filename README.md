@@ -1,66 +1,95 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Weather Application (Laravel)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A Laravel-based weather application that fetches real-time weather data from the OpenWeather API, processes it, and stores it in a database for retrieval and analysis.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* Fetches real-time weather data for multiple cities using OpenWeather API
+* Converts city names into geographic coordinates (latitude & longitude)
+* Retrieves detailed weather information including:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+  * Temperature (current, min, max)
+  * Weather conditions and descriptions
+  * Humidity and pressure
+  * Wind speed
+* Stores weather data in a database for historical tracking
+* Search weather data by specific date
+* Search weather by city name
+* Displays recent weather updates
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## How It Works
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1. **City Input**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+   * Accepts predefined or user-input city names
 
-## Laravel Sponsors
+2. **Geolocation API**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+   * Converts city names into latitude and longitude using OpenWeather Geocoding API
 
-### Premium Partners
+3. **Weather API**
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+   * Fetches detailed weather data using coordinates
 
-## Contributing
+4. **Data Processing**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   * Extracts and structures relevant weather information
 
-## Code of Conduct
+5. **Database Storage**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   * Saves weather data into a MySQL database for persistence
 
-## Security Vulnerabilities
+6. **Data Retrieval**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   * Allows querying stored weather data by date or city
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Tech Stack
+
+* **Backend:** Laravel (PHP)
+* **Database:** MySQL
+* **API:** OpenWeather API
+* **HTTP Client:** Laravel HTTP Client
+* **Frontend:** Blade Templates
+
+---
+
+## Key Functionalities
+
+### Weather Fetching
+
+* Retrieves weather data for multiple cities
+* Handles API responses and data transformation
+
+### Data Storage
+
+* Stores structured weather data in a relational database
+
+### Search & Filtering
+
+* Search weather data by:
+
+  * City name
+  * Specific date
+---
+
+## Notes
+
+* This project demonstrates:
+
+  * API integration
+  * Data processing and transformation
+  * Database design and interaction
+  * Backend system logic
+
+---
+
+## Author
+
+Glenn Ansah
+Full-Stack Developer (Laravel Focused)
