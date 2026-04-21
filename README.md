@@ -1,95 +1,38 @@
-# Weather Application (Laravel)
+Weather App
 
-A Laravel-based weather application that fetches real-time weather data from the OpenWeather API, processes it, and stores it in a database for retrieval and analysis.
+A Laravel web application that fetches real-time weather data from the OpenWeatherMap API, displays it in a clean card-based UI, and stores historical weather records in a MySQL database for date-based retrieval.
 
----
+Features
+	∙	Live weather data — fetches current weather for predefined cities (London, Tokyo, Paris, New York, Berlin) on load
+	∙	City search — search for current weather by entering any city name
+	∙	Weather by date — retrieve stored weather records for any past date from the local database
+	∙	Data persistence — every weather fetch is stored to a MySQL database, building a historical record over time
+	∙	Weather detail cards — displays temperature, min/max, humidity, pressure, wind speed, and weather condition with icons
 
-## Features
+Tech Stack
+	∙	Backend — PHP, Laravel
+	∙	Frontend — Blade, Bootstrap, Font Awesome
+	∙	Database — MySQL
+	∙	External API — OpenWeatherMap API (Geocoding + Current Weather endpoints)
 
-* Fetches real-time weather data for multiple cities using OpenWeather API
-* Converts city names into geographic coordinates (latitude & longitude)
-* Retrieves detailed weather information including:
+How It Works
+	1.	On load, the app calls the OpenWeatherMap Geocoding API to resolve city names to coordinates
+	2.	Coordinates are used to fetch current weather data from the Current Weather API
+	3.	Weather data is mapped to a structured collection and persisted to the database
+	4.	Users can search for any city or retrieve historical records by selecting a specific date
 
-  * Temperature (current, min, max)
-  * Weather conditions and descriptions
-  * Humidity and pressure
-  * Wind speed
-* Stores weather data in a database for historical tracking
-* Search weather data by specific date
-* Search weather by city name
-* Displays recent weather updates
+Setup Requirements
+	∙	PHP 8+
+	∙	Composer
+	∙	MySQL
+	∙	OpenWeatherMap API key (free tier) — get one here
 
----
+Notes
+	∙	This project was built as a portfolio piece demonstrating Laravel, external API integration, and MySQL persistence
+	∙	Weather data is fetched live on each request and stored — repeated fetches for the same city build a historical record queryable by date
+	∙	Built and tested with Laravel 10
 
-## How It Works
-
-1. **City Input**
-
-   * Accepts predefined or user-input city names
-
-2. **Geolocation API**
-
-   * Converts city names into latitude and longitude using OpenWeather Geocoding API
-
-3. **Weather API**
-
-   * Fetches detailed weather data using coordinates
-
-4. **Data Processing**
-
-   * Extracts and structures relevant weather information
-
-5. **Database Storage**
-
-   * Saves weather data into a MySQL database for persistence
-
-6. **Data Retrieval**
-
-   * Allows querying stored weather data by date or city
-
----
-
-## Tech Stack
-
-* **Backend:** Laravel (PHP)
-* **Database:** MySQL
-* **API:** OpenWeather API
-* **HTTP Client:** Laravel HTTP Client
-* **Frontend:** Blade Templates
-
----
-
-## Key Functionalities
-
-### Weather Fetching
-
-* Retrieves weather data for multiple cities
-* Handles API responses and data transformation
-
-### Data Storage
-
-* Stores structured weather data in a relational database
-
-### Search & Filtering
-
-* Search weather data by:
-
-  * City name
-  * Specific date
----
-
-## Notes
-
-* This project demonstrates:
-
-  * API integration
-  * Data processing and transformation
-  * Database design and interaction
-  * Backend system logic
-
----
-
-## Author
-
-Glenn Ansah
-Full-Stack Developer (Laravel Focused)
+Author
+Glenn Ansah — Full Stack Software Developer
+	∙	Email: ansahglenn@gmail.com
+	∙	GitHub: github.com/nanaglenn
